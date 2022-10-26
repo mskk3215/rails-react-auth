@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Navigate,
+  Redirect,
   Routes,
 } from "react-router-dom";
 
@@ -63,7 +63,7 @@ const App: React.FC = () => {
       if (isSignedIn) {
         return children;
       } else {
-        return <Navigate to="/signin" />;
+        return <Redirect to="/signin" />;
       }
     } else {
       return <></>;
