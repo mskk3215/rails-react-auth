@@ -62,9 +62,16 @@ const SignUp: React.FC = () => {
       if (res.status === 200) {
         // アカウント作成と同時にログインさせてしまう
         // 本来であればメール確認などを挟むべきだが、今回はサンプルなので
-        Cookies.set("_access_token", res.headers["access-token"]);
-        Cookies.set("_client", res.headers["client"]);
-        Cookies.set("_uid", res.headers["uid"]);
+
+        if (res.headers["access-token"]) {
+          Cookies.set("_access_token", res.headers["access-token"]);
+        }
+        if (res.headers["client"]) {
+          Cookies.set("_client", res.headers["client"]);
+        }
+        if (res.headers["uid"]) {
+          Cookies.set("_uid", res.headers["uid"]);
+        }
 
         setIsSignedIn(true);
         setCurrentUser(res.data.data);
