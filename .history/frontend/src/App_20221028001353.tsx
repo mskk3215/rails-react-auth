@@ -2,8 +2,8 @@ import React, { useState, useEffect, createContext } from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Navigate,
-  Routes,
+  history,
+  Switch,
 } from "react-router-dom";
 
 import CommonLayout from "components/layouts/CommonLayout";
@@ -63,7 +63,7 @@ const App: React.FC = () => {
       if (isSignedIn) {
         return children;
       } else {
-        return <Navigate to="/signin" />;
+        return <history to="/signin" />;
       }
     } else {
       return <></>;
@@ -83,13 +83,13 @@ const App: React.FC = () => {
         }}
       >
         <CommonLayout>
-          <Routes>
+          <Switch>
             <Route path="/signup" element={<SignUp />} />
             <Route path="/signin" component={SignIn} />
             <Private>
               <Route path="/" component={Home} />
             </Private>
-          </Routes>
+          </Switch>
         </CommonLayout>
       </AuthContext.Provider>
     </Router>

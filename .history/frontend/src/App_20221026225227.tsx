@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
   Redirect,
-  Routes,
+  Switch,
 } from "react-router-dom";
 
 import CommonLayout from "components/layouts/CommonLayout";
@@ -83,13 +83,13 @@ const App: React.FC = () => {
         }}
       >
         <CommonLayout>
-          <Routes>
+          <Switch>
             <Route path="/signup" component={SignUp} />
             <Route path="/signin" component={SignIn} />
             <Private>
               <Route path="/" component={Home} />
             </Private>
-          </Routes>
+          </Switch>
         </CommonLayout>
       </AuthContext.Provider>
     </Router>

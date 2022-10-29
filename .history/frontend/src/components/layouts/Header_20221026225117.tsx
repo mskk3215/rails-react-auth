@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Cookies from "js-cookie";
 
 import { makeStyles, Theme } from "@material-ui/core/styles";
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const Header: React.FC = () => {
   const { loading, isSignedIn, setIsSignedIn } = useContext(AuthContext);
   const classes = useStyles();
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const handleSignOut = async (e: React.MouseEvent<HTMLButtonElement>) => {
     try {
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
         Cookies.remove("_uid");
 
         setIsSignedIn(false);
-        navigate("/signin");
+        history("/signin");
 
         console.log("Succeeded in sign out");
       } else {
