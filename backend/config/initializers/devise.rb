@@ -95,8 +95,8 @@ Devise.setup do |config|
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
   # Notice that if you are skipping storage for all authentication paths, you
-  # may want to disable generating routes to Devise's sessions controller by
-  # passing skip: :sessions to `devise_for` in your config/routes.rb
+  # may want to disable generating Switch to Devise's sessions controller by
+  # passing skip: :sessions to `devise_for` in your config/Switch.rb
   config.skip_session_storage = [:http_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
@@ -105,11 +105,11 @@ Devise.setup do |config|
   # from the server. You can disable this option at your own risk.
   # config.clean_up_csrf_token_on_authentication = true
 
-  # When false, Devise will not attempt to reload routes on eager load.
+  # When false, Devise will not attempt to reload Switch on eager load.
   # This can reduce the time taken to boot the app but if your application
   # requires the Devise mappings to be loaded during boot time the application
   # won't boot properly.
-  # config.reload_routes = true
+  # config.reload_Switch = true
 
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 12. If
@@ -247,7 +247,7 @@ Devise.setup do |config|
   # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
-  # devise role declared in your routes (usually :user).
+  # devise role declared in your Switch (usually :user).
   # config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out

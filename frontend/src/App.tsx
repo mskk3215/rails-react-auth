@@ -84,10 +84,10 @@ const App: React.FC = () => {
       >
         <CommonLayout>
           <Switch>
-            <Route path="/signup" component={SignUp} />
-            <Route path="/signin" component={SignIn} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/signin" component={SignIn} />
             <Private>
-              <Route path="/" component={Home} />
+              <Route exact path="/" component={Home} />
             </Private>
           </Switch>
         </CommonLayout>
